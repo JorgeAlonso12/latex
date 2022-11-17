@@ -1,0 +1,18 @@
+%%%%%new feature using tikz geometry library.
+\vspace{1cm}
+\begin{tikzpicture}[delay/.style={shape=rectangle,minimum size=1cm,draw=gray,fill=blue!10}]
+	%draw isosceles triangle. Separated list of options for clarity
+	\node (inverter) [isosceles triangle,
+		  fill=gray!10,
+		  minimum size=1cm,
+		  rotate=180,
+		  draw] at (2,0) {};
+	\node (delayer) at (4,0) [delay] {Delay};
+	\node at (0,0) [anchor=east] {$x[n]$};
+	\node at (6,0) [anchor=west] {$y[n]$};
+	
+	\draw[->,thick] (0,0) -- (inverter.east) {};
+	\draw[->,thick] (inverter.west) -- (delayer.west) {};
+	\draw[->,thick] (delayer.east) -- (6,0) {};
+	\node at (inverter) {Mult.\hphantom{0}};
+\end{tikzpicture}
