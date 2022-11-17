@@ -1,0 +1,13 @@
+\begin{tikzpicture}[background rectangle/.style={fill=gray!8},framed]  %backgrounds from tikz library
+	%Draw circle with grid
+	\draw[thick,fill=white] (0,0) circle [radius=1cm];
+	\draw[step=0.5cm,very thin,color=gray] (-2,-2) grid (2,2);
+	
+	%Axes
+	\draw[<->,thick] (-2,0) -- (2,0);
+	\draw[<->,thick] (0,-2) -- (0,2);
+	
+	%Mark thicks
+	\node at (1,0)[anchor=north]{3};
+	\node at (0,-1)[anchor=east]{-3};	
+\end{tikzpicture}
