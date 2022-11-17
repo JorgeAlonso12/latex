@@ -1,0 +1,60 @@
+%my first tikz?
+%cartesian plane with what I believe is a DT signal (made up)
+\framebox
+{
+\begin{tikzpicture}
+	\draw[<->] (-2,0) -- (2,0);
+	\draw[<->] (0,-2) -- (0,2);
+	\draw[color=blue] (-2,0) -- (-1,0);
+	\draw[color=blue] (-1,1) -- (1,1);
+	\draw[color=blue] (1,0) -- (2,0);
+        \draw[color=blue] (-1,0) -- (-1,1);
+        \draw[color=blue] (1,0) -- (1,1);
+        
+        \foreach \x in {-2,-1,0,1,2}			%iterate to add point labels on the plane
+       		\draw (\x,0) node[anchor=north]{$\x$};
+	\foreach \y in {-2,-1,1,2}
+		\draw (0,\y) node[anchor=east]{$\y$};
+	
+	\draw (1.5,1.5) node{$x(t)$};
+\end{tikzpicture}
+}
+
+%I think this is a block diagram. This is not ideal but I'm including it 
+%to compare and contrast with later code.
+\begin{tikzpicture}	
+	%draw coordinate system
+	\draw[<->] (-2.5,0) -- (2.5,0);
+	\draw[<->] (0,-2.5) -- (0,2.5);
+	\draw (0,-0.25) node[anchor=east]{$0$};
+	\draw[thick] (0,2pt) -- (0,-2pt);
+			
+	\foreach \x in {-2,-1,1,2}
+	{
+		\draw (\x,0) node[anchor=north]{$\x$};
+		\draw[thick] (\x,2pt) -- (\x,-2pt);
+	}
+	\foreach \y in {-2,-1,1,2}
+	{
+		\draw (0,\y) node[anchor=east]{$\y$};
+		\draw (2pt,\y) -- (-2pt,\y);
+	}
+			
+	%data points; note: the styling property doesn't work here for whatever reason.
+	[data/.style={circle,draw=blue,fill=blue,scale=0.5}]
+	\draw (-2,1) node[shape=circle,fill=blue,scale=0.5]{};
+	\draw (-1,0.5) node[shape=circle,fill=blue,scale=0.5]{};
+	\draw (0,1) node[shape=circle,fill=blue,scale=0.5]{};
+	\draw (1,2) node[shape=circle,fill=blue,scale=0.5]{};
+	\draw (2,0.5) node[shape=circle,fill=blue,scale=0.5]{};
+			
+	%draw vertical lines to data points
+	\draw[color=blue,fill=white] (-2,0) -- (-2,1);
+	\draw[color=blue] (-1,0) -- (-1,0.5);
+	\draw[color=blue] (0,0) -- (0,1);
+	\draw[color=blue] (1,0) -- (1,2);
+	\draw[color=blue] (2,0) -- (2,0.5);
+			
+	%label
+	\draw (1.5,1.5) node{$x[n]$};
+\end{tikzpicture}
