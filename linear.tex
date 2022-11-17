@@ -1,0 +1,46 @@
+%placing components accurately with linear combinations of coordinates
+\begin{tikzpicture}[delay/.style={shape=rectangle,minimum size=1cm,draw=gray,fill=blue!10}]
+	\node (delayer1) at (0,0) [delay]{Delay};
+	\node (delayer2) at (2,0) [delay]{Delay};
+	
+	\draw[->,thick] (-2,0) -- (delayer1.west);
+	\draw[->,thick] (delayer1.east) -- (delayer2.west);
+	\draw[->,thick] (delayer2.east) -- (4,0);
+	
+	\node at (-2,0) [anchor=east]{$x[n]$};
+	\node at (4,0) [anchor=west]{$y[n]\equiv Y$};
+	\draw ($(delayer1.east)!0.5cm!(delayer2.west)$) node[anchor=south]{$Y_{1}$};  %NEW INFO, ($node1)!N units!(node2)$ places an object N units between node1 and node2
+	\node at (-2,-1) {\footnotesize \textbf{Figure 1.}};						  %from tikz library named calc
+\end{tikzpicture}
+
+
+%a graph of a DTS with underbrace. I don't know if hphantom is 
+%considered good coding style.
+\begin{tikzpicture}
+	\draw[<->] (-2.5,0) -- (2.5,0);
+	\draw[<->] (0,-2.5) -- (0,2.5);
+	
+	\foreach \x in {-2,-1,0,1,2}
+	{
+		\draw[thick] (\x,2pt) -- (\x,-2pt);
+		\node at (\x,0) [anchor=north]{$t_{\x}$};
+		
+		\ifthenelse{\x<0}			%ifthenelse from ifthen package
+		{
+			\node at (\x,0) [shape=circle,color=blue,fill=blue,draw,scale=0.5]{};
+		}
+		{
+			\draw[color=blue] (\x,0) -- (\x,1);
+			\node at (\x,1) [shape=circle,color=blue,fill=blue,draw,scale=0.5]{};
+		}
+	}
+	\foreach \y in {-2,-1,1,2}
+	{
+		\draw[thick] (2pt,\y) -- (-2pt,\y);
+		\node at (0,\y) [anchor=east]{$\y$};
+	}
+	
+	\node (left) at (1,-0.7){};
+	\node (right) at (2,-0.7){};
+	\draw ($(left)!0.5cm!(right)$) node{$\underbrace{\hphantom{0000000}}_{t_{2}-t_{1}=\Delta t}$};
+\end{tikzpicture}
