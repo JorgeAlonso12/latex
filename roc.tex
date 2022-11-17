@@ -12,3 +12,24 @@
 	\node at (1,0)[anchor=north]{3};
 	\node at (0,-1)[anchor=east]{-3};	
 \end{tikzpicture}
+
+%CT ROC>1
+\begin{tikzpicture}	
+	\draw[<->] (-2.5,0) -- (2.5,0);
+	\draw[<->] (0,-2.5) -- (0,2.5);
+	\draw[color=gray!70] (-2.5,-2.5) grid (2.5,2.5);
+	
+	\foreach \x in {-2,-1,1,2}
+	{
+		\draw[thick] (\x,2pt) -- (\x,-2pt);
+		\draw[thick] (2pt,\x) -- (-2pt,\x);
+		\node at (\x,0) [below=0.2cm]{$\x$};
+		\node at (0,\x)[right=0.2cm]{$\x$};
+	}
+	\node at (0,0)[below=0.2cm]{0};
+	\node at (1,0)[color=blue]{$\times$};
+	
+	\begin{scope}[on background layer={color=gray!30}] %ROC with scope
+		\fill (1,-2.5) rectangle (2.5,2.5);
+	\end{scope}
+\end{tikzpicture}
