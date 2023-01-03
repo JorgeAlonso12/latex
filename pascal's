@@ -1,0 +1,17 @@
+%Attempting to create Pascal's triangle
+%Still need to get coefficients. Plan is 
+%to lean bigintcalc
+
+\begin{tikzpicture}
+  \foreach \n in {0,...,4}
+  {
+	\pgfmathsetmacro\resulta{(-1)*\n}
+	\pgfmathsetmacro\resultb{\n+1}
+	
+	\foreach \m in {0,...,\n}
+	{
+		\pgfmathsetmacro\resultd{(-1)*\n+2*\m}
+		\node at (\resultd,\resulta){*};
+	}
+  }
+\end{tikzpicture}
