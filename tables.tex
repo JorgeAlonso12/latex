@@ -1,0 +1,101 @@
+%%%%%This section of code is called a preamble%%%%%
+\documentclass{article}				%type of document
+\usepackage{amsmath}	%what we want to use in our code; siunitx might help for SI units
+\setlength\parindent{0pt}				%ignore indentation throughout
+
+
+\usepackage{SIunits}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+%%%%%End of preamble%%%%%
+
+
+%%%%%This section is called the document environment%%%%%
+\begin{document}
+
+%%%%%we begin and end new environments. This one is the tabular environment to code for a table%%%%%
+Basic table
+
+\vspace{0.5cm}		%create vertical space
+\begin{tabular}{|c|c|c|c|} \hline
+	\textbf{Constant} 	 	 & Symbol		& \textbf{Value and Units} 					& \textbf{SI Units} \\ \hline		%\hline renders a horizontal line right below text
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
+	Speed of sound		 	 & 				& $344$ \meter	\cdot \second$^{2}$	 		& \\ \hline	
+	Speed of light		 	 & $c$		 	& $3\times 10^{8}$\meter \cdot \second$^{-1}$ & \\ \hline
+	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & \\ \hline 
+	Avogadro's number	 	 & N$_{\text{A}}$	& $6,022\times 10^{23}$				        & \\ \hline
+	Gravitational acceleration	 & $g$			& $9,8$ \meter \cdot \second$^{-1}$			& \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}	
+Align to left, maybe text color on titles
+
+\vspace{0.5cm}	
+\begin{tabular}{| l | l | l | l |} \hline
+	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}		& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
+	Speed of sound		 	 & 				& $344$ \meter	\cdot \second$^{2}$	 		& \\ \hline	
+	Speed of light		 	 & $c$		 	& $3\times 10^{8}$\meter \cdot \second$^{-1}$ & \\ \hline
+	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & \\ \hline 
+	Avogadro's number	 	 & N$_{\text{A}}$	& $6,022\times 10^{23}$				        & \\ \hline
+	Gravitational acceleration	 & $g$			& $9,8$ \meter \cdot \second$^{-1}$			& \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+Using multicolumn from multirow package 
+
+\vspace{0.5cm}
+\begin{tabular}{| l | l | l | l |} \hline
+	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}		& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
+	Speed of sound		 	 & 				& \multicolumn{2}{| l |}{$344$ \meter	\cdot \second$^{2}$}	 		\\ \hline
+	Speed of light		 	 & $c$		 	& \multicolumn{2}{| l |}{$3\times 10^{8}$\meter \cdot \second$^{-1}$}  \\ \hline
+	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & $6,626\times 10^{-34}$\kilogram \cdot \squaremetre \second$^{-1}$ \\ \hline 
+	Avogadro's number	 	 & N$_{\text{A}}$	& \multicolumn{2}{| l |}{$6,022\times 10^{23}$}				         \\ \hline
+	Gravitational acceleration	 & $g$			& \multicolumn{2}{| l |}{$9,8$ \meter \cdot \second$^{-1}$}			 \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+Add alternating colors
+
+\vspace{0.5cm}
+\rowcolors{3}{blue!10}{}
+\begin{tabular}{| l | l | l | l |}   \hline
+	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}		& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
+	Speed of sound		 	 & 				& \multicolumn{2}{| l |}{$344$ \meter	\cdot \second$^{2}$}	 		\\ \hline
+	Speed of light		 	 & $c$		 	& \multicolumn{2}{| l |}{$3\times 10^{8}$\meter \cdot \second$^{-1}$}  \\ \hline
+	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & $6,626\times 10^{-34}$\kilogram \cdot \squaremetre \second$^{-1}$ \\ \hline 
+	Avogadro's number	 	 & N$_{\text{A}}$	& \multicolumn{2}{| l |}{$6,022\times 10^{23}$}				         \\ \hline
+	Gravitational acceleration	 & $g$			& \multicolumn{2}{| l |}{$9,8$ \meter \cdot \second$^{-1}$}			 \\ \hline
+\end{tabular}
+
+\vspace{0.5cm}
+Highlight row of labels
+
+\vspace{0.5cm}
+\rowcolors{3}{blue!10}{}
+\begin{tabular}{| l | l | l | l |}   \hline
+	\rowcolor{gray!20}
+	\textbf{Constant} 	 	 & \textbf{Symbol}		& \textbf{Value and Units} 					& \textbf{SI Units} \\ \hline		
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
+	Speed of sound		 	 & 				& \multicolumn{2}{| l |}{$344$ \meter	\cdot \second$^{2}$}	 		\\ \hline
+	Speed of light		 	 & $c$		 	& \multicolumn{2}{| l |}{$3\times 10^{8}$\meter \cdot \second$^{-1}$}  \\ \hline
+	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & $6,626\times 10^{-34}$\kilogram \cdot \squaremetre \second$^{-1}$ \\ \hline 
+	Avogadro's number	 	 & N$_{\text{A}}$	& \multicolumn{2}{| l |}{$6,022\times 10^{23}$}				         \\ \hline
+	Gravitational acceleration	 & $g$			& \multicolumn{2}{| l |}{$9,8$ \meter \cdot \second$^{-1}$}			 \\ \hline
+\end{tabular}
+
+\vspace{0.5cm} Credit for content to
+
+Grade 10. version 1, caps (no date). South Africa: Siyavula Education. 
+
+
+\end{document}
+%%%%%End of document environment
+
