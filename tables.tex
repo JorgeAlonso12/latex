@@ -1,7 +1,7 @@
 %%%%%This section of code is called a preamble%%%%%
-\documentclass{article}				%type of document
-\usepackage{amsmath}	%what we want to use in our code; siunitx might help for SI units
-\setlength\parindent{0pt}				%ignore indentation throughout
+\documentclass{article}		%type of document
+\usepackage{amsmath}		%what we want to use in our code; siunitx might help for SI units
+\setlength\parindent{0pt}	%ignore indentation throughout
 
 
 \usepackage{SIunits}
@@ -34,13 +34,13 @@ Align to left, maybe text color on titles
 \vspace{0.5cm}	
 \begin{tabular}{| l | l | l | l |} \hline
 	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}		& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
-	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 	& $1,67\times 10^{-24}$ \kilogram \\ \hline
 	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
-	Speed of sound		 	 & 				& $344$ \meter	\cdot \second$^{2}$	 		& \\ \hline	
-	Speed of light		 	 & $c$		 	& $3\times 10^{8}$\meter \cdot \second$^{-1}$ & \\ \hline
+	Speed of sound		 	 & 				& $344$ \meter	\cdot \second$^{2}$	& \\ \hline	
+	Speed of light		 	 & $c$		 	& $3\times 10^{8}$\meter \cdot \second$^{-1}$  	& \\ \hline
 	Planck's constant	 	 & $h$			& $6,626\times 10^{-34}$\joule \cdot \second    & \\ \hline 
-	Avogadro's number	 	 & N$_{\text{A}}$	& $6,022\times 10^{23}$				        & \\ \hline
-	Gravitational acceleration	 & $g$			& $9,8$ \meter \cdot \second$^{-1}$			& \\ \hline
+	Avogadro's number	 	 & N$_{\text{A}}$	& $6,022\times 10^{23}$				& \\ \hline
+	Gravitational acceleration	 & $g$			& $9,8$ \meter \cdot \second$^{-1}$		& \\ \hline
 \end{tabular}
 
 \vspace{0.5cm}
@@ -48,8 +48,8 @@ Using multicolumn from multirow package
 
 \vspace{0.5cm}
 \begin{tabular}{| l | l | l | l |} \hline
-	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}		& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
-	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 		& $1,67\times 10^{-24}$ \kilogram \\ \hline
+	\textcolor{blue}{Constant} 	 	 & \textcolor{blue}{Symbol}					& \textcolor{blue}{Value and Units} 					& \textcolor{blue}{SI Units} \\ \hline		
+	Atomic mass unit 	 	 &  $u$     		& $1,67\times 10^{-24}$ \gram		 	& $1,67\times 10^{-24}$ \kilogram \\ \hline
 	Charge of an electron 	 & $e$			& $-1,6\times 10^{-19}$ \coulomb 	 		& $-1,6\times 10^{-19}$ \ampere \cdot \second \\ \hline
 	Speed of sound		 	 & 				& \multicolumn{2}{| l |}{$344$ \meter	\cdot \second$^{2}$}	 		\\ \hline
 	Speed of light		 	 & $c$		 	& \multicolumn{2}{| l |}{$3\times 10^{8}$\meter \cdot \second$^{-1}$}  \\ \hline
